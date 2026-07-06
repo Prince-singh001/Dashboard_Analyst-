@@ -1,0 +1,13 @@
+Employee_ID,Department,Tenure_Years,Satisfaction_Score,Performance_Rating
+EMP001,Engineering,3,4.2,Exceeds
+EMP002,Sales,1,3.5,Meets
+EMP003,Marketing,5,4.8,Exceeds
+EMP004,Engineering,2,3.9,Meets
+EMP005,HR,4,4.5,Exceeds
+EMP006,Sales,2,2.8,Meets
+EMP007,Engineering,6,4.9,Exceeds
+EMP008,Marketing,3,3.8,Meets
+EMP009,HR,1,4.0,Meets
+EMP010,Engineering,4,4.1,Meets
+EMP011,Sales,3,3.9,Meets
+EMP012,Engineering,5,4.6,Exceeds

@@ -1,0 +1,15 @@
+Date,Product,Category,Sales,Quantity,Region
+2026-01-01,Wireless Mouse,Electronics,450.0,15,North
+2026-01-02,Mechanical Keyboard,Electronics,899.0,10,East
+2026-01-03,Leather Journal,Office Supplies,120.0,8,South
+2026-01-04,Wireless Mouse,Electronics,300.0,10,West
+2026-01-05,Gel Pens 12-Pack,Office Supplies,75.0,25,North
+2026-01-06,Mechanical Keyboard,Electronics,1348.5,15,West
+2026-01-07,Ergonomic Chair,Furniture,2450.0,5,East
+2026-01-08,Leather Journal,Office Supplies,150.0,10,North
+2026-01-09,Ergonomic Chair,Furniture,1960.0,4,South
+2026-01-10,Gel Pens 12-Pack,Office Supplies,90.0,30,East
+2026-01-11,Wireless Mouse,Electronics,600.0,20,South
+2026-01-12,Mechanical Keyboard,Electronics,1798.0,20,North
+2026-01-13,Ergonomic Chair,Furniture,1470.0,3,West
+2026-01-14,Leather Journal,Office Supplies,225.0,15,East
