@@ -1,4 +1,5 @@
 import ast
+import builtins
 import json
 import os
 import traceback
@@ -84,7 +85,8 @@ class PandasSafeVisitor(ast.NodeVisitor):
             if node.id.startswith('_'):
                 raise ValueError(f"Security Block: Private variable name '{node.id}' is prohibited.")
             # Block builtins that are not explicitly allowed
-            if node.id in __builtins__.__dict__ if hasattr(__builtins__, '__dict__') else __builtins__:
+            _builtins_dict = vars(builtins)
+            if node.id in _builtins_dict:
                 if node.id not in self.allowed_builtins:
                     raise ValueError(f"Security Block: Access to python builtin '{node.id}' is prohibited.")
 
@@ -170,11 +172,12 @@ def safe_execute_pandas(code_str: str, df: pd.DataFrame) -> pd.DataFrame:
     
     # 2. Setup a highly restricted local scope
     # Include pandas as 'pd', the input DataFrame as 'df'
+    _builtins_dict = vars(builtins)
     safe_builtins_dict = {
-        k: __builtins__[k] for k in [
-            'len', 'int', 'float', 'str', 'list', 'dict', 'set', 'tuple', 'round', 
+        k: _builtins_dict[k] for k in [
+            'len', 'int', 'float', 'str', 'list', 'dict', 'set', 'tuple', 'round',
             'sum', 'min', 'max', 'abs', 'bool', 'sorted', 'enumerate', 'zip', 'range'
-        ] if k in __builtins__
+        ] if k in _builtins_dict
     }
     
     local_scope = {

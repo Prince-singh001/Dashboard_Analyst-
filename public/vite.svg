@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <!-- Main violet-to-indigo gradient -->
+    <linearGradient id="brandGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#7c3aed"/>
+      <stop offset="50%"  stop-color="#4f46e5"/>
+      <stop offset="100%" stop-color="#2563eb"/>
+    </linearGradient>
+
+    <!-- Glow filter for icon -->
+    <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+
+    <!-- Subtle inner shadow -->
+    <filter id="innerShadow">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/>
+      <feOffset dx="0" dy="1"/>
+      <feComposite in2="SourceAlpha" operator="arithmetic" k2="-1" k3="1"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.3 0"/>
+    </filter>
+
+    <!-- Background gradient for rounded square -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f0a2e"/>
+    </linearGradient>
+
+    <!-- Sparkle gradient -->
+    <linearGradient id="sparkGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%"   stop-color="#c4b5fd"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Dark rounded background -->
+  <rect width="100" height="100" rx="22" ry="22" fill="url(#bgGrad)"/>
+
+  <!-- Subtle border ring -->
+  <rect width="100" height="100" rx="22" ry="22"
+        fill="none" stroke="url(#brandGrad)" stroke-width="2" opacity="0.6"/>
+
+  <!-- ─── Bar chart bars (analytics icon) ─── -->
+  <!-- Bar 1 (left, shortest) -->
+  <rect x="14" y="58" width="13" height="24" rx="3" fill="url(#brandGrad)" opacity="0.7"/>
+  <!-- Bar 2 (middle-left) -->
+  <rect x="31" y="45" width="13" height="37" rx="3" fill="url(#brandGrad)" opacity="0.85"/>
+  <!-- Bar 3 (middle-right, tallest) -->
+  <rect x="48" y="30" width="13" height="52" rx="3" fill="url(#brandGrad)"/>
+  <!-- Bar 4 (right) -->
+  <rect x="65" y="40" width="13" height="42" rx="3" fill="url(#brandGrad)" opacity="0.9"/>
+
+  <!-- Trend line over bars -->
+  <polyline
+    points="20,56 37,43 54,28 71,38"
+    fill="none"
+    stroke="url(#sparkGrad)"
+    stroke-width="2.5"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+    filter="url(#glow)"
+    opacity="0.9"
+  />
+
+  <!-- Dots on trend line -->
+  <circle cx="20" cy="56" r="2.8" fill="#c4b5fd" filter="url(#glow)"/>
+  <circle cx="37" cy="43" r="2.8" fill="#c4b5fd" filter="url(#glow)"/>
+  <circle cx="54" cy="28" r="3.2" fill="#a78bfa" filter="url(#glow)"/>
+  <circle cx="71" cy="38" r="2.8" fill="#c4b5fd" filter="url(#glow)"/>
+
+  <!-- ─── Sparkle / AI star (top-right) ─── -->
+  <!-- Main 4-pointed star -->
+  <g transform="translate(76, 18)" filter="url(#glow)">
+    <path
+      d="M0,-8 C1,-3 3,-1 8,0 C3,1 1,3 0,8 C-1,3 -3,1 -8,0 C-3,-1 -1,-3 0,-8 Z"
+      fill="url(#sparkGrad)"
+    />
+    <!-- Smaller side star -->
+    <path
+      d="M12,-2 C13,0 14,1 16,1 C14,1 13,2 12,4 C11,2 10,1 8,1 C10,1 11,0 12,-2 Z"
+      fill="#e9d5ff"
+      opacity="0.8"
+    />
+  </g>
+
+  <!-- Bottom baseline -->
+  <line x1="10" y1="84" x2="90" y2="84"
+        stroke="url(#brandGrad)" stroke-width="1.5" opacity="0.4" stroke-linecap="round"/>
+</svg>
